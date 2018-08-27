@@ -1,19 +1,26 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<RootNamespace>thZero.Services</RootNamespace>
 		<AssemblyName>thZero.NetCore.Library.Services.Cache</AssemblyName>
 		<PackageId>thZero.NetCore.Library.Services.Cache</PackageId>
-		<Authors>thZero.com</Authors>
-		<Company>thZero.com</Company>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
 		<PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0.txt</PackageLicenseUrl>
 		<PackageProjectUrl>https://github.com/thzero/thZero.NetCore.Library.Services.Cache</PackageProjectUrl>
+    <RepositoryType>GitHub</RepositoryType>
 		<RepositoryUrl>https://github.com/thzero/thZero.NetCore.Library.Services.Cache</RepositoryUrl>
-		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>thZero.com</Authors>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Include="..\thZero.NetCore.Library\CommonAssemblyInfo.cs" Link="CommonAssemblyInfo.cs" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
