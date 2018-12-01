@@ -21,7 +21,7 @@ using System;
 
 namespace thZero.Services
 {
-	public sealed class ProviderCacheStats : StatsResults
+	public sealed class ServiceCacheStats : StatsResults
 	{
 		#region Public Properties
 		public long? Keys { get; set; }

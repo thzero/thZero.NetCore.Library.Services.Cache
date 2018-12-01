@@ -39,7 +39,7 @@ namespace thZero.Services
 		Task<T> Get<T>(string key, bool forceCache); //where T : class;
 		Task<T> Get<T>(string key, string region); //where T : class;
 		Task<T> Get<T>(string key, string region, bool forceCache);//where T : class;
-		Task<bool> Initialize(ProviderCacheConfig config);
+		Task<bool> Initialize(ServiceCacheConfig config);
 		Task<bool> MaintainCache();
 		Task<bool> Remove(string key);
 		Task<bool> Remove(string key, bool forceCache);
@@ -47,6 +47,6 @@ namespace thZero.Services
 		Task<bool> Remove(string key, string region, bool forceCache);
 		Task<long> Size();
 		Task<Dictionary<string, long>> SizeRegions();
-		Task<ProviderCacheStats> StatsAsync();
+		Task<ServiceCacheStats> StatsAsync();
 	}
 }

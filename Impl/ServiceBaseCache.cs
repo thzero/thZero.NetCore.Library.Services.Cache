@@ -21,16 +21,18 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 
+using Microsoft.Extensions.Logging;
+
 namespace thZero.Services
 {
-	public abstract class ServiceCacheBase : IServiceCacheBase
-	{
-		public ServiceCacheBase()
-		{
-		}
+	public abstract class ServiceCacheBase<TService> : IntermediaryServiceBase<TService>, IServiceCacheBase
+    {
+        public ServiceCacheBase(thZero.Services.IServiceLog log, ILogger<TService> logger) : base(log, logger)
+        {
+        }
 
-		#region Public Methods
-		public virtual void Initialize()
+        #region Public Methods
+        public virtual void Initialize()
 		{
 		}
 

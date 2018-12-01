@@ -21,7 +21,7 @@ using System;
 
 namespace thZero.Services
 {
-	public class ProviderCacheConfig
+	public class ServiceCacheConfig
 	{
 		#region Public Properties
 		public string Endpoint { get; set; }

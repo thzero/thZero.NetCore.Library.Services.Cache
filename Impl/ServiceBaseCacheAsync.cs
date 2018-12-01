@@ -21,14 +21,16 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
+using Microsoft.Extensions.Logging;
+
 using Nito.AsyncEx;
 
 namespace thZero.Services
 {
-	public abstract class ServiceBaseCacheAsync : IServiceCacheAsync
+	public abstract class ServiceBaseCacheAsync<TService> : IntermediaryServiceBase<TService>, IServiceCacheAsync
 	{
-		public ServiceBaseCacheAsync()
-		{
+        public ServiceBaseCacheAsync(thZero.Services.IServiceLog log, ILogger<TService> logger) : base(log, logger)
+        {
 		}
 
 		#region Public Methods
@@ -193,7 +195,7 @@ namespace thZero.Services
 			}
 		}
 
-		public async Task<bool> Initialize(ProviderCacheConfig config)
+		public async Task<bool> Initialize(ServiceCacheConfig config)
 		{
 			return await InitializeCore(config);
 		}
@@ -291,7 +293,7 @@ namespace thZero.Services
 			}
 		}
 
-		public async Task<ProviderCacheStats> StatsAsync()
+		public async Task<ServiceCacheStats> StatsAsync()
 		{
 			IDisposable lockResult = null;
 
@@ -332,7 +334,7 @@ namespace thZero.Services
 
 		protected abstract Task<T> GetCore<T>(string key, string region);
 
-		protected abstract Task<bool> InitializeCore(ProviderCacheConfig config);
+		protected abstract Task<bool> InitializeCore(ServiceCacheConfig config);
 
 		protected abstract Task<bool> MaintainCacheCore();
 
@@ -342,7 +344,7 @@ namespace thZero.Services
 
 		protected abstract Task<Dictionary<string, long>> SizeRegionsCore();
 
-		protected abstract Task<ProviderCacheStats> StatsCore();
+		protected abstract Task<ServiceCacheStats> StatsCore();
 
 		protected virtual bool UseCache(bool forceCache)
 		{
