@@ -29,7 +29,7 @@ namespace thZero.Services
 		[Newtonsoft.Json.JsonIgnore]
 		bool Cacheable { get; }
 		bool CacheEnabled { get; set; }
-		List<Guid> Ids { get; }
+        IEnumerable<Guid> Ids { get; }
 		bool WasCached { get; set; }
 		bool WasCachedSecondary { get; set; }
 	}
