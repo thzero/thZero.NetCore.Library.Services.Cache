@@ -202,7 +202,7 @@ namespace thZero.Services
 		public T Get<T>(string key, string region, bool forceCache)
 		{
 			if (!forceCache && !CacheEnabled)
-				return default(T);
+				return default;
 
 			try
 			{
@@ -311,7 +311,7 @@ namespace thZero.Services
 		#endregion
 
 		#region Fields
-		private static readonly ReaderWriterLockSlim LockCache = new ReaderWriterLockSlim();
+		private static readonly ReaderWriterLockSlim LockCache = new();
 		private static bool _useCache = true;
 		#endregion
 	}

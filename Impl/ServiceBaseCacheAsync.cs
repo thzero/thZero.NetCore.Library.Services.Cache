@@ -177,7 +177,7 @@ namespace thZero.Services
 		public async Task<T> Get<T>(string key, string region, bool forceCache)
 		{
 			if (!UseCache(forceCache))
-				return default(T);
+				return default;
 
 			IDisposable lockResult = null;
 

@@ -50,7 +50,7 @@ namespace thZero.Services
 		#endregion
 
 		#region Fields
-		private readonly Dictionary<string, string> _additionals = new Dictionary<string, string>();
+		private readonly Dictionary<string, string> _additionals = new();
 		#endregion
 	}
 }
