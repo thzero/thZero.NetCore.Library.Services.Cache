@@ -24,7 +24,7 @@ using thZero.Responses;
 
 namespace thZero.Services
 {
-	public interface IServiceCacheExecuteResponse : IDurationRequestResponse
+	public interface IServiceCacheExecuteResponse : IDurationResponse
 	{
 		[Newtonsoft.Json.JsonIgnore]
 		bool Cacheable { get; }
